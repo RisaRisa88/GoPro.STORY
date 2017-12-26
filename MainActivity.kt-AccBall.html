@@ -1,0 +1,57 @@
+package com.story.accball
+
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+}
+
+public class MainActivity extends AppCompatActivity{
+
+    Sensor Manager mSensorManager;
+    Sensor mAccSensor;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        mSensorManager =
+                (SensorManager)getSystemService(Context.SENSOR_SERVICE);
+        mAccSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+    }
+}
+
+public class MainActivity extends AppCompatActivity implements SensoEventListener(
+Sensor Manager mSensorManager;
+Sensor mAccSensor;
+
+@Override
+protected void onCreate(Bundle savedInstanceState){
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    mSensorManager =
+            (SensorManager)getSystemService(Context.SENSOR_SERVICE);
+    mAccSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+}
+)
+
+        @Override
+        public void onSensorChanged(SensorEvent event){
+
+}
+
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int accuracy){
+
+}
+
+        @Override
+        public void onResume(){
+    super.onResume();
+    mSensorManager.registerListener(this, mAccSensor, SensorManager.SENSOR_DELAY_GAME);
+}
